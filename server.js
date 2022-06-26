@@ -76,6 +76,16 @@ function checkForWin(num, symbol) {
   }
 }
 
+// middlewares
+app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"),
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
+
+
+
 // IO object creation
 
 const io = new Server(server, {

@@ -4,6 +4,7 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);   
 const cors = require("cors")
+const port = process.env.PORT || 8000
 app.use(cors())
 
 const {Server} = require("socket.io")  // server class from socket.io
@@ -114,6 +115,6 @@ app.get("/", (req, res) => {
   res.send("<h1>Hello world</h1>");
 });
 
-server.listen(8000, () => {
-  console.log("listening on *:8000");
+server.listen(port, () => {
+  console.log("listening on :",port);
 });

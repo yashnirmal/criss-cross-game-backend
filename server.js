@@ -90,7 +90,8 @@ app.use((req, res, next) => {
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://criss-cross-pvp.netlify.app/"],
+    // origin: ["https://criss-cross-pvp.netlify.app/"],
+    origin: ["http://localhost:3000"]
   },
 });
 
